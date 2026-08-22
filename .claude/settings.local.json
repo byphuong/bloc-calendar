@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/phuongnguyen/Applications/LichBloc.app/Contents/MacOS /Users/phuongnguyen/Applications/LichBloc.app/Contents/Resources)",
+      "Bash(cp /Users/phuongnguyen/Desktop/calendar/index.html /Users/phuongnguyen/Applications/LichBloc.app/Contents/Resources/app.html)",
+      "Read(//Users/phuongnguyen/Applications/**)"
+    ]
+  }
+}
