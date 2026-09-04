@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lịch Bính Ngọ · 2026</title>
+<title>Bính Ngọ Calendar · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -1355,6 +1355,7 @@ function playPomoAlert(){
 function applyStaticLang(){
   const L10=t();document.documentElement.lang=lang;
   document.getElementById('brandTitle').textContent=L10.brand;
+  document.title=(lang==='en'?'Bính Ngọ Calendar':'Lịch Bính Ngọ')+' · 2026';
   document.getElementById('btnToday').textContent=L10.today;
   document.getElementById('tasksTitle').textContent=L10.tasks;
   document.getElementById('wcTitle').textContent=L10.worldClock;
