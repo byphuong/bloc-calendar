@@ -391,7 +391,6 @@
   /* controls under sheet */
   .drag-hint{position:absolute;top:100%;left:0;right:0;display:flex;justify-content:center;gap:calc(7px * var(--sheet-scale));margin-top:calc(16px * var(--sheet-scale));
     font-family:"Be Vietnam Pro";font-size:calc(12px * var(--sheet-scale));font-weight:500;font-style:italic;color:#888888;transition:opacity .4s;}
-  .drag-hint.gone{opacity:0;pointer-events:none;}
 
   /* ---------- decorative Chinese key corner ornaments ---------- */
   .corner{position:fixed;width:74px;height:74px;pointer-events:none;z-index:6;
@@ -859,7 +858,7 @@ function finishSwap(dir){
   animating=false;renderCountdown();
 }
 function tearAway(dir,fromDrag){
-  animating=true;hideHint();
+  animating=true;
   if(preparedDir!==dir)prepBack(dir);
   playTearSound();
   sheetStack.classList.add('ripping');
@@ -910,9 +909,6 @@ sheet.addEventListener('wheel',e=>{
     setTimeout(()=>{wheelCd=false;},640);
   }
 },{passive:false});
-let hintGone=localStorage.getItem('lichbloc:hint')==='1';
-function hideHint(){if(hintGone)return;hintGone=true;localStorage.setItem('lichbloc:hint','1');document.getElementById('dragHint').classList.add('gone');}
-
 /* ===== tasks (per day) ===== */
 function tasksKey(){return 'lichbloc:tasks:'+fmtKey(current);}
 function loadTasks(){try{return JSON.parse(localStorage.getItem(tasksKey()))||[];}catch(e){return [];}}
@@ -1385,7 +1381,6 @@ renderCountdown();
 renderWorldClock();
 initPomodoro();
 setInterval(tickWorldClock,15000);
-if(hintGone)document.getElementById('dragHint').classList.add('gone');
 
 /* ===== fit the whole stage into the viewport below the fixed topbar — no page scroll at any resolution ===== */
 (function(){
